@@ -1,0 +1,12 @@
+
+How to
+- restore the drawing after displaying a color selection box?
+- restore the drawing after window is resized?
+- save/display data to/from disk?
+- undo user actions?
+
+- Could take a snapshot of the window's contents before displaying the box. Afterwards restore contents from the snapshot. Need to figure out (a) how to get the pixels from X server and (b) how to tell X server to display those pixels again.
+
+- Could maintain a parallel data structure that describes the drawing. So we can always redraw the drawing by reading data from that data structure.
+
+- Could maintain our own pixel buffer. Does require more work from our part, but the work is more interesting :) than searching through api documentation.
